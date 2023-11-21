@@ -1,0 +1,168 @@
+@import url("menuStyle.css");
+
+body {
+    min-width: 800px;
+    min-height: 500px;
+    margin: 0;
+    background-color: hsl(0, 0%, 11%);
+    color: whitesmoke;
+    font-family: sans-serif;
+}
+button {
+    cursor: pointer;
+}
+@media only screen and (max-width: 767px) {
+    body .tutorial{
+        left: 100%;
+    }
+    body #refresh-redirect,
+     body #menu-redirect{
+        width: 200px;
+        height: 35px;
+        font-size: 16px ;
+     }
+}
+
+.game-frame {
+    min-width: 400px;
+    max-width: 1100px;
+    height: 400px;
+    background-color: hsl(0, 0%, 15%);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    border-radius: 5px;
+    border: 2px solid whitesmoke;
+    overflow: hidden;
+    position: relative;
+    user-select: none;
+}
+.hitbox{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 29px;
+    left: 110px;
+}
+.player{
+    z-index: 1;
+}
+ .icon1, .icon2, .icon3, .icon4, .icon5, .icon6 {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    transform: translate(98px, 5px);
+}
+
+.icon1,  .icon2, .icon3, .icon4 , .icon5 , .icon {
+    display: none;
+}
+
+.credits {
+    margin-bottom: 0px;
+    padding: 10px 5px 10px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(0, 0%, 11%);
+    color:hsl(0, 0%, 30%);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform: translate(0, 1%);
+    z-index: 1;
+}
+
+.ground {
+    width: 1100px;
+    height: 25px;
+    background-color: hsl(0, 0%, 22%);
+}
+
+#score-ui {
+    font-family: consolas;
+    margin: 0 auto;
+    display: flex;
+}
+.spike {
+    width: 50px;
+    height: 50px;
+    background-color: whitesmoke;
+    clip-path: polygon(50% 10%, 0% 100%, 100% 100%);
+    position: absolute;
+    bottom: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+#france{
+    margin-top: 0;
+    float: left;
+    padding-left: 10px;
+    text-align: start;
+    width: 20%;
+    color: hsl(0, 0%, 45%);
+    opacity: 50%;
+}
+#title{
+    width: 30%;
+    margin: 15px auto;
+    background: -webkit-linear-gradient(0deg, #00000014, #f1f1f1 );
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.end-buttons{
+    text-align: center;
+}
+#refresh-redirect, #menu-redirect {
+    margin-left: 15px;
+    display: none;
+    width: 150px;
+    border-radius: 10px;
+    padding: 6px 0px 6px 0px;
+    background-color: hsl(0, 0%, 25%);
+    border-style: groove;
+
+}
+#refresh-redirect:active, #menu-redirect:active{
+    border-style:initial;
+}
+#refresh-redirect:hover, #menu-redirect:hover{
+    text-shadow: 1px 1px 4px hsl(0, 0%, 85%);
+}
+#cooldown{
+    text-align: center;
+}
+.default-setIcon{
+    bottom: 25px;
+    left: 100px;
+}
+.spike {
+    left: 1100px;
+}
+.icon1 {
+    border-radius: 5px;
+}
+.icon2{
+    border-radius: 40% 40% 0px 0px;
+}
+.icon3{
+    border-radius: 0 40% 0 30%;
+}
+.icon4{
+    border-radius: 0 15px 10px 10px;
+}
+.icon5{
+    border-radius: 0 15px 10px 10px;
+}
+.icon6{
+    border-radius: 20% 0 20% 0;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotateZ(-180deg);
+        transform-origin: center bottom;
+    }
+}

@@ -1,0 +1,268 @@
+
+body {
+    min-width: 500px;
+    min-height: 400px;
+    margin: 0;
+    background-color: hsl(0, 0%, 11%);
+    color: whitesmoke;
+    font-family: sans-serif;
+    text-align: center;
+    color: hsl(0, 0%, 80%);
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+button {
+    cursor: pointer;
+}
+@media only screen and (max-width: 767px) {
+    body .tutorial{
+        left: 64%;
+        width: 450px;
+    }
+  }
+.icon-menu, .color-menu{
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    width: 500px;
+    background-color: hsl(0, 0%, 60%);
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 5px solid black;
+}
+.category:hover{
+    text-decoration: underline;
+}
+#title{
+    width: 500px;
+    margin: 0 auto;
+    background: -webkit-linear-gradient(0deg, #00000014, hsl(0, 0%, 35%), #f1f1f1 );
+    -webkit-background-clip: text;
+    color: transparent;
+}
+#high-score{
+    font-family: consolas;
+    color: yellow;
+    font-size: 30px;
+}
+header{
+    margin-bottom: 90px;
+}
+#start-btn{
+    font-size: 20px;
+    border-radius: 20px;
+    border-style: groove;
+    padding: 10px 111px 10px 111px;
+    background-color: hsl(0, 0%, 25%);
+}
+#start-btn:active{
+    border-style:dashed;
+}
+#start-btn:hover{
+    text-shadow: 1px 1px 5px hsl(0, 0%, 85%);
+
+    animation: growAndChange 0.4s forwards;
+}
+@keyframes growAndChange {
+    0% {
+        transform: scale(1);
+        border-radius: 0;
+    }
+    100% {
+        border-radius: 20px;
+        box-shadow: 0px 0px 25px hsl(0, 0%, 25%);
+        transform: scale(1.1, 1);
+    }
+}
+score{
+    line-height: 0.3;
+}
+.credits {
+    margin-bottom: 0px;
+    padding: 10px 5px 10px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(0, 0%, 11%);
+    color:hsl(0, 0%, 30%);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200;
+}
+#welcome-text{
+    animation: welcome-title 0.4s forwards;
+}
+@keyframes welcome-title{
+    0% {transform: rotate(-180deg);}
+    100% {transform: rotate(-360deg);
+    }
+}
+.color{
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 50%;
+    margin: 5px 5px 5px 10px;
+}
+.icon-container1, .color-container1, .icon-container2, .color-container2,
+.icon-container3, .color-container3, .icon-container4, .color-container4,
+.icon-container5, .color-container5, .icon-container6, .color-container6{
+    width: 70px;
+    height: 60px;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: hsl(0, 0%, 50%);
+}
+.icon-container1:hover, .color-container1:hover, .icon-container2:hover, .color-container2:hover,
+.icon-container3:hover, .color-container3:hover, .icon-container4:hover, .color-container4:hover,
+.icon-container5:hover, .color-container5:hover, .icon-container4:hover, .color-container6:hover,
+.icon-container5:hover, .icon-container6:hover{
+
+    border: 2px solid black;
+    box-shadow: 0px 1px 5px white;
+}
+.icon-container1, .color-container1{
+    margin-left: 10px;
+}
+.icon-container6, .color-container6{
+    margin-right: 10px;
+}
+
+#col1{
+    background-color:hsl(0, 0%, 95%);
+}
+#col2{
+    background-color: hsl(0, 100%, 60%);
+}
+#col3{
+    background-color: hsl(226, 100%, 60%);
+}
+#col4{
+    background-color:hsl(115, 95%, 36%);
+}
+#col5{
+    background-color:hsl(308, 100%, 80%);
+}
+#col6{
+    background-color:hsl(60, 100%, 50%);
+}
+.default-setIcon{
+    width: 50px;
+    height: 50px;
+    background-color: beige;
+    margin: 5px 5px 5px 10px;
+    border: 1px solid black;
+}
+.icon1 {
+    border-radius: 5px;
+}
+.icon2{
+    border-radius: 40% 40% 0px 0px;
+}
+.icon3{
+    border-radius: 0 40% 0 30%;
+}
+.icon4{
+    border-radius: 0 15px 10px 10px;
+}
+.icon5{
+    border-radius: 0 15px 10px 10px;
+}
+.icon6{
+    border-radius: 20% 0 20% 0;
+
+}
+.icon1-center, .icon2-center,.icon3-center,.icon4-center,.icon5-center,.icon6-center{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: hsl(0, 0%, 10%);
+    margin: 12px 0px 10px 12px;
+    z-index: 10;
+    color:hsl(0, 0%, 96%);
+}
+
+.icon1-center {
+    border-radius: 5px;
+}
+.icon2-center {
+    border-radius: 0 0 30% 30%;
+}
+/*.icon3-center {
+} */
+.icon4-center {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.icon5-center {
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+}
+.icon6-center {
+    border-radius: 50%;
+    color:hsl(84, 100%, 19%);
+}
+#version{
+    float: left;
+    margin-left: 10px;
+    opacity: 75%;
+}
+.about{
+    padding-top: 2px;
+    width: 27px;
+    height: 25px;
+    background-color: hsl(0, 0%, 40%);
+    float: right;
+    border-radius: 50%;
+    color: black;
+    font-size: 20px;
+    margin-right: 15px;
+    user-select:none;
+    cursor: pointer;
+}
+.tutorial {
+    display: none;
+    width: 550px;
+    height: 350px;
+    background-color: hsl(0, 0%, 20%);
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    border-radius: 20px;
+    border: 2px solid black;
+    overflow: auto;
+    padding: 15px 10px 10px 10px;
+    box-shadow: 1px 1px 5px hsl(0, 0%, 0%);
+}
+#exit-tutorial{
+    padding: 4px 8px 4px 8px;
+    float: right;
+    margin-right: 5px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: hsl(0, 0%, 45%);
+}
+#exit-tutorial:active{
+    background-color: hsl(0, 0%, 55%) ;
+}
+#exit-tutorial:hover{
+    color: hsl(0, 0%, 70%)
+}
+#vvv {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#luck{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.keys{
+    line-height: 5px ;
+}
