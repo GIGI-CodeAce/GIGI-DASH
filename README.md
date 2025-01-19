@@ -1,4 +1,4 @@
-<h1 align="center" id="title">GIGI-DASHl</h1>
+<h1 align="center" id="title">GIGI-DASH</h1>
 
 <p align="center">
   <img src="Media/GGD-pfp.png" alt="project-image" style="width: 40%; height: 300px">
@@ -64,7 +64,7 @@ Pushing through deadly spikes, high speeds and theme colored seasons.
 <h2 align="center">Project Screenshots:</h2>
 <div align="center">
   <h3>Icons and colors</h3>
- <img src="/Media/mdMedia/icons.png" alt="project-screenshot"  style="width: 600px; height: 400px">
+ <img src="/Media/mdMedia/icons.png" alt="project-screenshot"  style="width: 600px; height: 500px">
   <h3>Game interface</h3>
   <img src="/Media/mdMedia/game.png" alt="project-screenshot" style="width: 100%; height: 400px">
 </div><br></br>
