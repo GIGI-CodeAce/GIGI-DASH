@@ -11,46 +11,24 @@ document.addEventListener("DOMContentLoaded", function() {
   const playerEl = document.querySelector(`.icon${playerIcon}`);
 
 function hideOthers(){
-  icons[0].style.display = 'none'
-  icons[1].style.display = 'none'
-  icons[2].style.display = 'none'
-  icons[3].style.display = 'none'
-  icons[4].style.display = 'none'
-  icons[5].style.display = 'none'
-}
-
-
-  switch (playerIcon) {
-    case 1:
-      hideOthers()
-      icons[0].style.display = 'block';
-      break;
-    case 2:
-      hideOthers()
-      icons[1].style.display = 'block';
-      break;
-    case 3:
-      hideOthers()
-      icons[2].style.display = 'block';
-      break;
-    case 4:
-      hideOthers()
-      icons[3].style.display = 'block';
-      break;
-    case 5:
-      hideOthers()
-      icons[4].style.display = 'block';
-      break;
-    case 6:
-      hideOthers()
-      icons[5].style.display = 'block';
-      break;
-  }
+  icons.forEach(icon => (icon.style.display = 'none'))
+ }
 
   const tutorialUI = document.querySelector(".tutorial")
   const exitTutorial = document.getElementById("exit-tutorial")
   const aboutBTN = document.querySelector(".about")
+  const iconColors = ['hsl(0, 0%, 95%)', 'hsl(0, 100%, 60%)', 'hsl(226, 100%, 60%)',
+                   'hsl(115, 95%, 36%)', 'hsl(308, 100%, 80%)', 'hsl(60, 100%, 50%)']
+
+  if(playerIcon){
+    hideOthers()
+    icons[playerIcon-1].style.display = 'block';
+   }
+   if(playerCol){
+    playerEl.style.backgroundColor = iconColors[playerCol-1];
+   }
  
+
   aboutBTN.addEventListener("click", function(){
     validJump = false
      tutorialUI.style.display = "block";
@@ -59,30 +37,6 @@ function hideOthers(){
      tutorialUI.style.display = "none";
      validJump = true
   })
-
-
-if (playerEl) {
-  switch (playerCol) {
-    case 1:
-      playerEl.style.backgroundColor = "hsl(0, 0%, 95%)";
-      break;
-    case 2:
-      playerEl.style.backgroundColor = "hsl(0, 100%, 60%)";
-      break;
-    case 3:
-      playerEl.style.backgroundColor = "hsl(226, 100%, 60%)";
-      break;
-    case 4:
-      playerEl.style.backgroundColor = "hsl(115, 95%, 36%)";
-      break;
-    case 5:
-      playerEl.style.backgroundColor = "hsl(308, 100%, 80%)";
-      break;
-    case 6:
-      playerEl.style.backgroundColor = "hsl(60, 100%, 50%)";
-      break;
-  }
-}
 
   let score = JSON.parse(localStorage.getItem("score-ui")) || 0;
   const hitboxUI = document.querySelector(".hitbox")
@@ -145,10 +99,10 @@ function getRandomItemFromArray(array) {
       }
 });
 
-  
+
   document.addEventListener("keydown", handleKeyPress)
-  document.addEventListener("click", handleClick)
-  
+  document.addEventListener("mousedown", handleClick)
+
   function counter(){
     count--
     if (cooldownUI){
@@ -177,13 +131,15 @@ function getRandomItemFromArray(array) {
         validJump = false;
         playerTop -= 60;
 
+
         const translateYValue = `${playerTop}px`;
 
         hitboxUI.style.transition = "transform 0.06s ease";
         skinsUI.style.transition = "transform 0.06s ease";
 
         hitboxUI.style.transform = `translateY(${translateYValue})`;
-        skinsUI.style.transform = `translateY(${translateYValue}`;
+        skinsUI.style.transform = `translateY(${translateYValue})`;
+
 
         setTimeout(() => {
             playerTop += 60;
@@ -256,39 +212,26 @@ function colorSwitch(backCol,spikeCol,frameCol){
 }
 let seconds = 0;
 
+const themes = [
+  { background: "hsl(84, 100%, 15%)", spike: "hsl(84, 100%, 30%)", frame: "hsl(84, 100%, 10%)" },       // Green
+  { background: "hsl(209, 100%, 34%)", spike: "hsl(209, 100%, 63%)", frame: "hsl(209, 100%, 40%)" },    // Blue
+  { background: "hsl(14, 100%, 30%)", spike: "hsl(14, 100%, 50%)", frame: "hsl(14, 100%, 35%)" },       // Red
+  { background: "hsl(0, 0%, 74%)", spike: "hsl(0, 0%, 60%)", frame: "hsl(0, 0%, 80%)" },                // White
+  { background: "hsl(295, 100%, 30%)", spike: "hsl(295, 100%, 55%)", frame: "hsl(295, 100%, 35%)" }     // Purple
+];
+
+themeChanges()
+
 function themeChanges(){
   if (isAlive){
     seconds += 1
     if (seconds === 18){
       seconds = 0
-      let RandTheme = Math.floor(Math.random() * 5) + 1;
-      switch (RandTheme) {
-          case 1:
-            // green
-
-               colorSwitch("hsl(84, 100%, 15%)","hsl(84, 100%, 30%)","hsl(84, 100%, 10%)")
-              break;
-          case 2:
-             // blue
-
-               colorSwitch("hsl(209, 100%, 34%)","hsl(209, 100%, 63%)","hsl(209, 100%, 40%)")
-               break;
-          case 3:
-                //red
-
-                colorSwitch("hsl(14, 100%, 30%)","hsl(14, 100%, 50%)","hsl(14, 100%, 35%)")
-                break;
-          case 4:
-                // white
-
-                colorSwitch("hsl(0, 0%, 74%)","hsl(0, 0%, 60%)","hsl(0, 0%, 80%)")
-                break;
-          case 5:
-                //purple
-
-                colorSwitch("hsl(295, 100%, 30%)","hsl(295, 100%, 55%)","hsl(295, 100%, 35%)")
-                break;
-          }
+      let RandTheme = Math.floor(Math.random() * themes.length);
+      if(RandTheme){
+        const pikedTheme = themes[RandTheme]
+        colorSwitch(pikedTheme.background,pikedTheme.spike,pikedTheme.frame)
+      }
   
           groundUI.style.transition = "background-color 5s ease";
           spike.style.transition = "background-color 1s ease";
@@ -299,17 +242,17 @@ function themeChanges(){
 }
 setInterval(themeChanges, 1000);
 
-  function checkCollision() {
-    const playerRect = hitboxUI.getBoundingClientRect();
-    const spikeRect = spike.getBoundingClientRect();
-    
+function checkCollision() {
+  const playerRect = hitboxUI.getBoundingClientRect();
+  const spikeRect = spike.getBoundingClientRect();
+
   if (
-    playerRect.right > spikeRect.left && 
-    playerRect.left < spikeRect.right &&
-    playerRect.bottom > spikeRect.top &&
-    playerRect.top < spikeRect.bottom
+      Math.floor(playerRect.right) > Math.floor(spikeRect.left) &&
+      Math.floor(playerRect.left) < Math.floor(spikeRect.right) &&
+      Math.floor(playerRect.bottom) > Math.floor(spikeRect.top) &&
+      Math.floor(playerRect.top) < Math.floor(spikeRect.bottom)
   ) {
-    endGame();
+      endGame();
   }
 }
 

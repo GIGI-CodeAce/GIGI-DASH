@@ -23,12 +23,7 @@ console.log(`                        &@@@@@@@@@@@@#.
                                                *&@@@@&        `);
 
 document.addEventListener("DOMContentLoaded", function(){
-    icons[0].style.display = 'block'
-    icons[1].style.display = 'block'
-    icons[2].style.display = 'block'
-    icons[3].style.display = 'block'
-    icons[4].style.display = 'block'
-    icons[5].style.display = 'block'
+    icons.forEach(icon => (icon.style.display = 'block'))
 
  const tutorialUI = document.querySelector(".tutorial")
  const exitTutorial = document.getElementById("exit-tutorial")
@@ -67,26 +62,7 @@ const playerEl = document.querySelector(`.icon${playerIcon}`)
 for (let i = 1; i <= 6; i++) {
     const iconEl = document.querySelector(`.icon${i}`)
     iconEl.addEventListener("click", () => {
-        switch (i) { 
-            case 1:
-                playerIcon = 1
-                break;
-            case 2:
-                playerIcon = 2
-                break;
-            case 3:
-                playerIcon = 3
-                break;
-            case 4:
-                playerIcon = 4
-                break;
-            case 5:
-                playerIcon = 5
-                break;
-            case 6:
-                playerIcon = 6
-                break;
-        }
+        playerIcon = i
         iconBackEl.style.backgroundColor = "hsl(0, 0%, 40%)"
         localStorage.setItem("icon-container", playerIcon.toString())
         window.location.href = "./GDmenu"
