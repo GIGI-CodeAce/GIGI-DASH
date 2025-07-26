@@ -2,7 +2,7 @@
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/GIGIsOtherStuff/mainWebMedia/main/AppImages/myProjectsImgs/GDlogoNew.png"
-   alt="project-image" style="width: 45%; height: 270px">
+   alt="project-image" style="width: 45%; height: 330px">
 </p>
 
 <p id="description">
