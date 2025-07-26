@@ -1,7 +1,8 @@
 <h1 align="center" id="title">GIGI-DASH</h1>
 
 <p align="center">
-  <img src="Media/GGD-pfp.png" alt="project-image" style="width: 40%; height: 300px">
+  <img src="https://raw.githubusercontent.com/GIGIsOtherStuff/mainWebMedia/main/AppImages/myProjectsImgs/GDlogoNew.png"
+   alt="project-image" style="width: 45%; height: 300px">
 </p>
 
 <p id="description">
